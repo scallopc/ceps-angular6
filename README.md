@@ -6,7 +6,6 @@ Aplicação Angular para consulta e gerenciamento de endereços através do serv
 
 ### Interface e UX
 - Design responsivo com Material UI (v6.4.7) e Bootstrap (v4.3.1)
-- Header com menu hamburguer em telas pequenas
 - Animações suaves de transição
 - Feedback visual para todas as ações do usuário
 - Layout adaptativo para diferentes tamanhos de tela
