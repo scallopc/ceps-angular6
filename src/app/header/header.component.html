@@ -1,0 +1,39 @@
+<header class="header" role="banner">
+  <div class="container-fluid" aria-label="Header">
+    <div class="d-flex align-items-center justify-content-between flex-wrap py-2">
+      <div class="logo-container d-flex align-items-center">
+        <a href="/" class="logo-link" aria-label="Logo SCCON">
+          <img src="assets/images/logo-sccon.svg" alt="Logo SCCON" class="logo-img">
+        </a>
+      </div>
+      
+      <nav class="main-nav flex-grow-1" role="navigation" aria-label="Menu principal">
+        <mat-toolbar color="primary" class="nav-toolbar justify-content-end px-0" aria-label="Menu principal">
+          <div class="menu-container d-flex align-items-center">
+            <button mat-button routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" data-section="home">
+              <span class="d-flex align-items-center">
+                <i class="bi bi-house-door mx-1"></i>
+                <span>Home</span>
+              </span>
+            </button>
+            <button mat-button [matMenuTriggerFor]="addressesMenu" data-section="enderecos">
+              <span class="d-flex align-items-center">
+                <i class="bi bi-geo-alt mx-1"></i>
+                <span>Endereços</span>
+              </span>
+            </button>
+            
+            <mat-menu #addressesMenu="matMenu" [overlapTrigger]="false" aria-label="Menu de endereços">
+              <button mat-menu-item routerLink="/search-cep" routerLinkActive="active">
+                <span class="d-flex align-items-center">
+                  <i class="bi bi-search mx-1"></i>
+                  <span>Buscar Endereços</span>
+                </span>
+              </button>
+            </mat-menu>
+          </div>
+        </mat-toolbar>
+      </nav>
+    </div>
+  </div>
+</header>

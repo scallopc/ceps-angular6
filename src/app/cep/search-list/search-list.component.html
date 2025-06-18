@@ -1,0 +1,32 @@
+<div class="table-responsive">
+    <h3 class="my-3">Endereços Pesquisados</h3>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>CEP</th>
+                <th>Endereço</th>
+                <th>Data da Busca</th>
+                <th class="text-center">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let address of addresses">
+                <td>{{ address.cep }}</td>
+                <td>{{ getFullAddress(address) }}</td>
+                <td>{{ address.searchDate | date:'dd/MM/yyyy HH:mm' }}</td>
+                <td class="text-center">
+                    <div class="btn-group">
+                        <button class="btn btn-sm btn-outline-danger" 
+                                (click)="onDelete(address)"
+                                title="Remover endereço"
+                                data-toggle="tooltip" 
+                                data-placement="bottom" 
+                                aria-label="Remover endereço">
+                            <i class="bi bi-trash-fill"></i>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

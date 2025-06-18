@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+$primary-color: #670000;
+$secondary-color: #d7dbdd;
+$shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+$secondary-color-hover: darken($secondary-color, 6%);
+
+
+html, body { 
+  height: 100%; 
+}
+
+body { 
+  margin: 0; 
+  font-family: Roboto, "Helvetica Neue", sans-serif; 
+  font-size: 0.95rem;
+}
+
+button {
+  outline: none;
+}
+

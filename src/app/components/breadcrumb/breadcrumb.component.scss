@@ -1,0 +1,29 @@
+@import "src/styles.scss";
+
+.breadcrumb-nav {
+  margin-bottom: 1.5rem;
+
+  .breadcrumb {
+    background-color: transparent;
+
+    .breadcrumb-item {
+      display: flex;
+      align-items: center;
+      font-size: 0.9rem;
+
+      a {
+        color: $primary-color;
+        text-decoration: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: $secondary-color-hover;
+        }
+
+      }
+    }
+  }
+}

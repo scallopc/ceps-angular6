@@ -1,0 +1,27 @@
+<app-toast
+  [show]="showDuplicateToast"
+  [message]="'Este CEP já foi adicionado à lista.'"
+  [type]="'warning'"
+  [duration]="5000"
+  (closed)="showDuplicateToast = false"
+></app-toast>
+
+<div class="row h-100 flex-column">
+  <div class="container mt-4">
+    <app-breadcrumb [items]="breadcrumbs"></app-breadcrumb>
+
+    <div class="col-12">
+      <app-search-cep
+        (search)="onSearchCep($event)"
+        [hasError]="hasError"
+      ></app-search-cep>
+      <div class="mt-4">
+        <app-search-list
+          *ngIf="addresses.length > 0"
+          [addresses]="addresses"
+          (delete)="onDeleteAddress($event)"
+        ></app-search-list>
+      </div>
+    </div>
+  </div>
+</div>

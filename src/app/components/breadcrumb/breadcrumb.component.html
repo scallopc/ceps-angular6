@@ -1,0 +1,20 @@
+<nav *ngIf="items.length" class="breadcrumb-nav" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li *ngFor="let item of items; let last = last" 
+        class="breadcrumb-item" 
+        [class.active]="last">
+      <ng-container *ngIf="!last; else lastItem">
+        <a (click)="navigate(item.url)" [class.disabled]="!item.url">
+          <i *ngIf="item.icon" class="material-icons">{{item.icon}}</i>
+          {{item.label}}
+        </a>
+      </ng-container>
+      <ng-template #lastItem>
+        <span>
+          <i *ngIf="item.icon" class="material-icons">{{item.icon}}</i>
+          {{item.label}}
+        </span>
+      </ng-template>
+    </li>
+  </ol>
+</nav>

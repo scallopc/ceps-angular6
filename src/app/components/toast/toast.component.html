@@ -1,0 +1,18 @@
+<div class="toast-container">
+    <div class="toast fade" role="alert" aria-live="assertive" aria-atomic="true" 
+         [class.show]="show"
+         [class.hide]="!show">
+        <div class="toast-header text-dark border-0" [class]="headerClass">
+            <div class="d-flex align-items-center justify-content-between py-2 px-3">
+                <i class="bi me-2 text-dark" [class]="iconClass"></i>
+                <strong>{{ title }}</strong>
+                <i class="bi bi-x-lg" (click)="onClose()"></i>
+            </div>
+        </div>
+        <div class="toast-body py-2 px-3" [class]="bodyClass">
+            <div class="py-2 px-3">
+                {{ message }}
+            </div>
+        </div>
+    </div>
+</div>

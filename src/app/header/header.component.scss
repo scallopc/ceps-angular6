@@ -1,0 +1,113 @@
+@import "src/styles.scss";
+
+.header {
+  padding: 0;
+  background-color: $primary-color;
+  box-shadow: $shadow;
+
+  .logo-container {
+    padding: 0.5rem 1rem;
+
+    .logo-img {
+      width: 100%;
+      max-width: 80px;
+      transition: transform 0.2s ease;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  .main-nav {
+    .nav-toolbar {
+      background-color: inherit;
+      min-height: 48px;
+      padding: 0 1rem;
+
+      @media (max-width: 768px) {
+        justify-content: flex-start !important;
+      }
+
+      .menu-container {
+        gap: 0.5rem;
+
+        button[mat-button]{
+          background-color: $primary-color;
+          color: $secondary-color;
+          border-radius: 4px;
+        transition: background-color 0.3s ease;
+        outline: none;
+
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-1px);
+          }
+
+          &.active {
+            background-color: rgba(255, 255, 255, 0.2);
+          }
+
+          i {
+            font-size: 1.1rem;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 576px) {
+
+    .main-nav {
+      .nav-toolbar {
+        padding: 0 0.5rem;
+        
+        .menu-container {
+          width: 100%;
+          justify-content: space-around;
+          
+          button[mat-button]{
+            padding: 0 0.5rem;
+            font-size: 0.8rem;
+            outline: none;
+            i {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+::ng-deep {
+  .mat-menu-panel {
+    border-radius: 4px;
+    background-color: $primary-color;
+    margin-top: 8px;
+    min-width: 200px !important;
+
+    .mat-menu-item {
+      color: $secondary-color;
+      border-radius: 4px;
+      margin: 4px;
+      line-height: 36px;
+      height: 36px;
+      outline: none;
+
+      button:focus {
+        outline: none;
+      }
+
+      &:hover {
+        outline: none;
+        background-color: $secondary-color-hover !important;
+        color: $primary-color;
+      }
+    }
+  }
+
+  .mat-menu-content {
+    padding: 8px !important;
+  }
+}
